@@ -1,0 +1,77 @@
+<html>
+
+<head>
+  <title>neural network art</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=320, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+  <style>
+    .slidecontainer {
+      width: 50%;
+    }
+
+    .slider1 {
+      -webkit-appearance: none;
+      width: 50%;
+      height: 25px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+
+    .slider1:hover {
+      opacity: 1;
+    }
+
+    .slider1::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      background: #04AA6D;
+      cursor: pointer;
+    }
+
+    .slider1::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      background: #04AA6D;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="p5Container">
+
+  </div>
+  <div class="button">
+    <button id="generate" class="generate
+    ">Generate Art</button>
+  </div>
+  <p>Network Size:</p>
+  <input type="range" min="1" max="50" value="25" class="slider" id="networkSizeSlider">
+  <output id='output1'></output>
+  <p>Hidden Layers:</p>
+  <input type="range" min="1" max="50" value="25" class="slider2" id="nHiddenSlider">
+  <output id='output2'></output>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+  <script src="../lib/p5.min.js"></script>
+
+  <script src="../lib/recurrent.js"></script>
+
+  <script src="art.js"></script>
+
+
+
+
+
+</body>
+
+</html>
