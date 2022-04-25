@@ -9,6 +9,39 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <style media="">
+    ::-moz-selection {
+      /* Code for Firefox */
+      color: white;
+      background: #750f2e;
+    }
+
+    ::selection {
+      color: white;
+      background: #750f2e;
+    }
+
+    h1 {
+      color: white;
+      transition: 0.4s;
+      cursor: pointer;
+    }
+
+    h1:hover {
+      color: #750f2e;
+      transition: 0.4s;
+      cursor: pointer;
+    }
+
+    .btn {
+      background-color: black;
+      color: white;
+    }
+
+    .btn:hover {
+      background-color: #750f2e;
+      color: white;
+    }
+
     .container-fluid {
       background: #2a2a2a;
       color: white;
@@ -42,44 +75,81 @@
     }
 
     i:hover {
-      color: #AEC6CF;
+      color: #750f2e;
       transition: 0.4s;
       cursor: pointer;
+    }
+
+
+
+    .slider {
+      -webkit-appearance: none;
+      width: 75%;
+      height: 10px;
+      background: #2a2a2a;
+      outline: none;
+      border: 1px solid white;
+      border-radius: 8px;
+
+    }
+
+
+    /* for chrome/safari */
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 10px;
+      height: 40px;
+      background: #2a2a2a;
+      cursor: pointer;
+      border: 1px solid white;
+      border-radius: 4px;
+    }
+
+    /* for firefox */
+    .slider::-moz-range-thumb {
+      width: 10px;
+      height: 10px;
+      background: #2a2a2a;
+      cursor: pointer;
+      border: 1px solid white;
+      border-radius: 4px;
     }
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm  navbar-dark justify-content-center">
-    <div class="container-fluid">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <p class="nav-link active" href="">neural network artwork generator</p>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <div class="container-fluid">
+    <h1 class="display-4">neural network art generator</h1>
+  </div>
+
   <div class="container-fluid" style="margin-top:100px">
     <div class="row">
-      <div class="col-lg-6" style="margin-top:50px">
+      <div class="col-lg-3">
+
+      </div>
+      <div class="col-lg-3" style="margin-top:50px">
 
         <div class="button">
-          <button id="generate" class="btn btn-dark">Generate Art</button>
+          <button id="generate" class="btn">Generate Art</button>
           <hr>
-          <p>Network Size:</p>
-          <input type="range" min="1" max="50" value="5" class="slider" id="networkSizeSlider">
+          <p style="margin-bottom: 20px">Network Size:</p>
+          <input type="range" min="1" max="50" value="5" step="1" class="slider" id="networkSizeSlider">
           <output id='output1'></output>
-          <p>Hidden Layers:</p>
-          <input type="range" min="1" max="50" value="5" class="slider" id="nHiddenSlider">
+          <p style="padding-bottom: 15px; padding-top: 30px;">Hidden Layers:</p>
+          <input type="range" min="1" max="50" value="5" step="1" class="slider" id="nHiddenSlider">
           <output id='output2'></output>
 
-          <p>The larger network size and the more hidden layers you choose, the longer your art will take to load</p>
+          <p style="padding-top: 25px;">The larger network size and the more hidden layers you choose, the longer your art will take to load</p>
           <p>PS: this may crash your browser</p>
         </div>
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-3">
         <div id="p5Container">
         </div>
+      </div>
+      <div class="col-lg-3">
+
       </div>
 
     </div>
