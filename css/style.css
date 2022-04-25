@@ -1,10 +1,12 @@
+
+}
 .slidecontainer {
   width: 100%;
 }
 
 .slider {
   -webkit-appearance: none;
-  width: 100%;
+  width: 50%;
   height: 25px;
   background: #d3d3d3;
   outline: none;
